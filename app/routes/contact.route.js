@@ -1,19 +1,19 @@
 const express = require("express");
-const constacts = require("../controllers/contact.controller");
+const contacts = require("../controllers/contact.controller");
 
 const router = express.Router();
 
 router.route("/")
-    .get(constacts.findAll)
-    .post(constacts.create)
-    .delete(constacts.deleteAll);
+    .get(contacts.findAll)
+    .post(contacts.create)
+    .delete(contacts.deleteAll);
 
 router.route("/favorite")
-    .get(constacts.findAllFavorite);
+    .get(contacts.findAllFavorite);
 
 router.route("/:id")
-    .get(constacts.findOne)
-    .put(constacts.update)
-    .delete(constacts.delete);
+    .get(contacts.findOne)
+    .put(contacts.update)
+    .delete(contacts.delete);
 
 module.exports = router;
